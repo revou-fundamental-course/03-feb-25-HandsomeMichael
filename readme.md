@@ -1,6 +1,3 @@
 Aturan
 
-- menggunakan huruf kecil pada penamaan
-
-
-test
+- menggunakan huruf kecil pada penamaan dan dash "-" untuk pemisahan
