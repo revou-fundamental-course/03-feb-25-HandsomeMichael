@@ -63,6 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
             el.style.display = isCelciusToFahrenheit ? "block" : "none";
         });
 
+        if (isCelciusToFahrenheit)
+        {
+            celciusInput.placeholder  = "Masukkan suhu celcius ...";
+            fahrenheitInput.placeholder  = "Hasil dalam suhu fahrenheit";
+        }
+        else
+        {
+            fahrenheitInput.placeholder  = "Masukkan suhu fahrenheit ...";
+            celciusInput.placeholder  = "Hasil dalam suhu celcius";
+        }
+
         // Swap readonly state
         celciusInput.toggleAttribute("readonly");
         fahrenheitInput.toggleAttribute("readonly");
@@ -103,11 +114,41 @@ document.addEventListener("DOMContentLoaded", () => {
         errorFF.style.display = "none";
     }
 
+    function copy_input_cc()
+    {
+
+        // console.log("tai");
+        // if (celciusInput.value == "")
+        // {
+        //     console.log("tai");
+        //     return;
+        // }
+        if (celciusInput.value == "")return;
+        navigator.clipboard.writeText(celciusInput.value).then(() => {alert("Copied: " + celciusInput.value+"°C");});
+    }
+
+    function copy_input_ff()
+    {
+        if (fahrenheitInput.value == "")return;
+        navigator.clipboard.writeText(fahrenheitInput.value).then(() => {alert("Copied: " + fahrenheitInput.value+"°F");});
+    }
+
+    function copy_input_cara()
+    {
+        if (conversionStep.value == "")return;
+        navigator.clipboard.writeText(conversionStep.value).then(() => {alert("Copied: " + conversionStep.value);});
+    }
+
     convertBtn.addEventListener("click", on_convert);
     resetBtn.addEventListener("click", reset);
     reverseBtn.addEventListener("click", reverse);
+
+    document.getElementById("copy-cc").addEventListener("click", copy_input_cc);
+    document.getElementById("copy-ff").addEventListener("click", copy_input_ff);
+    document.getElementById("copy-cara").addEventListener("click", copy_input_cara);
 
     document.querySelectorAll(".display-ff").forEach(el => el.style.display = "none");
 
     reset_error();
 });
+

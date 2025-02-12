@@ -60,18 +60,19 @@
             <!-- Input  -->
             <div>
                 <label for="main-celcius">Suhu Celcius (C&deg;) :</label>
+                <p id="error-cc">Masukkan suhu celcius yg valid !</p>
                 <div class="input-container">
-                    <p id="error-cc">❌Masukkan suhu celcius yg valid !</p>
-                    <input type="number" id="main-celcius">
+                    <input type="number" id="main-celcius" placeholder="Masukkan Suhu celcius">
+                    <img id="copy-cc" src="assets/copy_icon.svg" alt="">
                 </div>
             </div>
 
             <div>
                 <label for="main-fahrenheit">Suhu Fahrenheit (F&deg;): </label>
-
+                <p id="error-ff">Masukkan suhu fahrenheit yg valid !</p>
                 <div class="input-container">
-                    <p id="error-ff">❌ Masukkan suhu fahrenheit yg valid !</p>
-                    <input type="number" id="main-fahrenheit" readonly>
+                    <input type="number" id="main-fahrenheit" placeholder="Hasil Suhu fahrenheit" readonly>
+                    <img id="copy-ff" src="assets/copy_icon.svg" alt="">
                 </div>
             </div>
 
@@ -86,7 +87,11 @@
 
             <div>
                 <label for="konversi-cara">Cara Konversi : </label>
-                <input type="text" id="konversi-cara" readonly>
+
+                <div class="input-container">
+                    <input type="text" id="konversi-cara" placeholder="Cara konversi suhu tersebut." readonly>
+                    <img id="copy-cara" src="assets/copy_icon.svg" alt="">
+                </div>
             </div>
 
         </section>
