@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Celcius to Fahrenheit</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Kalkulator Suhu °C ke °F</h1>
+    </header>
+
+    <!-- Main -->
+    <main>
+      <form action="index.html" method="post" id="calc">
+        <label for="celsius">Celsius (°C):</label>
+        <input type="text" id="celsius" name="celsius" />
+        <label for="fahrenheit">Fahrenheit (°F):</label>
+        <input type="text" id="fahrenheit" name="fahrenheit" />
+        <div class="button">
+          <button type="button" id="reverse">
+            <div class="text">Reverse</div>
+            <div class="overlay"></div>
+          </button>
+          <canvas class="particleCanvas"></canvas>
+        </div>
+
+        <label for="kalkulasi">Cara Kalkulasi:</label>
+        <input type="text" id="kalkulasi" name="kalkulasi" readonly />
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer></footer>
+  </body>
+  <script src="js/script.js"></script>
+</html>

@@ -1,118 +1,74 @@
+
+//Loading
+// if (!sessionStorage.getItem("hasLoaded")) {
+//     sessionStorage.setItem("hasLoaded", "true");
+// } 
+// else {
+//     document.querySelector(".loading").style.display = "none";
+// }
+
 document.addEventListener("DOMContentLoaded", () => {
-  const celsiusInput = document.getElementById("celsius");
-  const fahrenheitInput = document.getElementById("fahrenheit");
-  const kalkulasiInput = document.getElementById("kalkulasi");
-  const reverseButton = document.getElementById("reverse");
+    const celciusInput = document.getElementById("main-celcius");
+    const fahrenheitInput = document.getElementById("main-fahrenheit");
+    const conversionStep = document.getElementById("konversi-cara");
 
-  let isCelsiusToFahrenheit = true;
+    const convertBtn = document.getElementById("convert-btn");
+    const resetBtn = document.getElementById("reset-btn");
+    const reverseBtn = document.getElementById("reverse-btn");
 
-  function convertCelsiusToFahrenheit() {
-    let celsius = parseFloat(celsiusInput.value);
-    if (!isNaN(celsius)) {
-      let fahrenheit = (celsius * 9) / 5 + 32;
-      fahrenheitInput.value = fahrenheit.toFixed(2);
-      kalkulasiInput.value = `${celsius} * 9/5 + 32 = ${fahrenheit.toFixed(
-        2
-      )} °F`;
-    } else {
-      fahrenheitInput.value = "";
-      kalkulasiInput.value = "";
+    let isCelciusToFahrenheit = true;
+
+    function convert() {
+        if (isCelciusToFahrenheit) {
+            let c = parseFloat(celciusInput.value);
+            if (!isNaN(c)) {
+                let f = (c * 9/5) + 32;
+                fahrenheitInput.value = f.toFixed(2);
+                conversionStep.value = `${c} × 9/5 + 32 = ${f.toFixed(2)}°F`;
+            }
+        } else {
+            let f = parseFloat(fahrenheitInput.value);
+            if (!isNaN(f)) {
+                let c = (f - 32) * 5/9;
+                celciusInput.value = c.toFixed(2);
+                conversionStep.value = `(${f} - 32) × 5/9 = ${c.toFixed(2)}°C`;
+            }
+        }
     }
-  }
 
-  function convertFahrenheitToCelsius() {
-    let fahrenheit = parseFloat(fahrenheitInput.value);
-    if (!isNaN(fahrenheit)) {
-      let celsius = ((fahrenheit - 32) * 5) / 9;
-      celsiusInput.value = celsius.toFixed(2);
-      kalkulasiInput.value = `${fahrenheit} - 32 * 5/9 = ${celsius.toFixed(
-        2
-      )} °C`;
-    } else {
-      celsiusInput.value = "";
-      kalkulasiInput.value = "";
+    function reset() {
+        celciusInput.value = "";
+        fahrenheitInput.value = "";
+        conversionStep.value = "";
     }
-  }
 
-  function swapInput() {
-    if (isCelsiusToFahrenheit) {
-      fahrenheitInput.readOnly = true;
-      celsiusInput.readOnly = false;
-    } else {
-      celsiusInput.readOnly = true;
-      fahrenheitInput.readOnly = false;
+    function reverse() {
+        isCelciusToFahrenheit = !isCelciusToFahrenheit;
+
+        let celc = celciusInput.value;
+        let fah =  fahrenheitInput.value;
+
+        // Transfer the value without modification
+        if (isCelciusToFahrenheit) {
+            celciusInput.value = fah;
+            fahrenheitInput.value = celc;
+
+        } else {
+            fahrenheitInput.value = celc;
+            celciusInput.value = fah;
+
+        }
+
+        conversionStep.value = '';
+
+        // Swap readonly state
+        celciusInput.toggleAttribute("readonly");
+        fahrenheitInput.toggleAttribute("readonly");
+
+        // reset(); // Reset the calculation
     }
-  }
 
-  celsiusInput.addEventListener("input", function () {
-    if (isCelsiusToFahrenheit) convertCelsiusToFahrenheit();
-  });
-
-  fahrenheitInput.addEventListener("input", function () {
-    if (!isCelsiusToFahrenheit) convertFahrenheitToCelsius();
-  });
-
-  reverseButton.addEventListener("click", function () {
-    isCelsiusToFahrenheit = !isCelsiusToFahrenheit;
-    celsiusInput.value = "";
-    fahrenheitInput.value = "";
-    kalkulasiInput.value = "";
-    swapInput();
-
-    // Particle explosion
-    const rect = reverseButton.getBoundingClientRect();
-    createParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
-  });
-
-  swapInput(); // Initialize input correctly
-
-  // ✅ Particle System
-  const canvas = document.createElement("canvas");
-  document.body.appendChild(canvas);
-  canvas.style.position = "fixed";
-  canvas.style.top = "0";
-  canvas.style.left = "0";
-  canvas.style.pointerEvents = "none";
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const ctx = canvas.getContext("2d");
-  let particles = [];
-
-  function createParticles(x, y) {
-    for (let i = 0; i < 50; i++) {
-      particles.push({
-        x: x,
-        y: y,
-        size: Math.random() * 4 + 1,
-        speedX: (Math.random() - 0.5) * 20,
-        speedY: (Math.random() - 0.5) * 20,
-        color: `hsl(${Math.random() * 360}, 100%, 50%)`,
-        life: 100,
-      });
-    }
-  }
-
-  function animateParticles() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    particles.forEach((p, index) => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = p.color;
-      ctx.fill();
-
-      p.x += p.speedX;
-      p.y += p.speedY;
-      p.life -= 2;
-
-      if (p.life <= 0) {
-        particles.splice(index, 1);
-      }
-    });
-
-    requestAnimationFrame(animateParticles);
-  }
-
-  animateParticles(); // Start animation loop
+    convertBtn.addEventListener("click", convert);
+    resetBtn.addEventListener("click", reset);
+    reverseBtn.addEventListener("click", reverse);
 });

@@ -1,39 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator Celcius to Fahrenheit</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header>
-      <h1>Kalkulator Suhu °C ke °F</h1>
-    </header>
+<head>
+    <!-- Meta data stuff -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolem°</title>
 
-    <!-- Main -->
-    <main>
-      <form action="index.html" method="post" id="calc">
-        <label for="celsius">Celsius (°C):</label>
-        <input type="text" id="celsius" name="celsius" />
-        <label for="fahrenheit">Fahrenheit (°F):</label>
-        <input type="text" id="fahrenheit" name="fahrenheit" />
-        <div class="button">
-          <button type="button" id="reverse">
-            <div class="text">Reverse</div>
-            <div class="overlay"></div>
-          </button>
-          <canvas class="particleCanvas"></canvas>
+
+
+    <!-- Link -->
+    <link rel="icon" type="svg" href="assets/logo_small.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+
+</head>
+<body>
+
+    <!-- Loading -->
+    <div class="loading">
+        <img src="assets/splat.png" alt="">
+    </div>
+
+    <!-- Header / navbar -->
+     <header class="main-header">
+        <img class="main-logo" src="assets/logo.svg" alt="">
+        <div class="grid"></div>
+        <div class="main-header-text">
+            <img width="24px" src="assets/revou_icon.png" alt="(RV)">
+            <p>RevoU SEFC Mini Project</p>
         </div>
+     </header>
 
-        <label for="kalkulasi">Cara Kalkulasi:</label>
-        <input type="text" id="kalkulasi" name="kalkulasi" readonly />
-      </form>
-    </main>
+     <!-- 
+     Transisi smooth 
+     Mungkin sedikit menghancurkan format coding yg rapi tapi keliatan keren kata gw
+     -->
+     <div class="main-separator2"></div>
+    <div class="main-separator"></div>
 
-    <!-- Footer -->
-    <footer></footer>
-  </body>
-  <script src="js/script.js"></script>
+     <!-- Main -->
+      <main class="main">
+
+        <!-- Introduksi -->
+        <section class="content-penjelasan">
+            <h1>Penjelasan</h1>
+            <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah,<br>
+                lali klik tombol konversi untuk mendapatkan <br>
+                hasil konversi dalam bentuk Fahrenheit (&deg;F)</p>
+        </section>
+
+        <!-- Actual stuff -->
+        <section class="converter">
+
+            <!-- Input  -->
+            <div>
+                <label for="main-celcius">Suhu Celcius (C&deg;) :</label>
+                <input type="number" id="main-celcius">    
+            </div>
+
+            <div>
+                <label for="main-fahrenheit">Suhu Fahrenheit (F&deg;): </label>
+                <input type="number" id="main-fahrenheit" readonly>
+            </div>
+
+            <!-- Main Action Button -->
+            <div class="buttons">
+                <button id="convert-btn">Konversi</button>
+                <button id="reset-btn">Reset</button>
+                <button id="reverse-btn">Reverse</button>
+            </div>
+
+            <br>
+
+            <div>
+                <label for="konversi-cara">Cara Konversi : </label>
+                <input type="text" id="konversi-cara" readonly>
+            </div>
+
+        </section>
+
+        <!-- Rumus -->
+         <section class="content-rumus">
+
+            <h1>
+                Rumus
+            </h1>
+
+            <p>
+                Suhu S dalam derajat Celcius (°C) sama dengan suhu S <br> 
+                dalam derajat Fahrenheit (°F) dikurangi 32, kemudian dibagi 5/9.
+            </p>
+
+            <div class="content-contoh">
+                <p>
+                    <b>S</b>(<b>&deg;F</b>) = (<b>S</b>(<b>&deg;C</b>) × <sup>9</sup>&frasl;<sub>5</sub>) + 32
+                </p>
+                
+                <p>
+                    atau
+                </p>
+                
+                <p>
+                    <b>S</b>(<b>&deg;F</b>) = (<b>S</b>(<b>&deg;C</b>) × 1.8) + 32
+                </p>
+            </div>
+
+         </section>
+
+      </main>
+
+      <!-- Seperator -->
+      <div class="main-separator3"></div>
+
+      <!-- footer -->
+       <footer>
+        <p>Created by <a href="https://github.com/HandsomeMichael">HandsomeMichael</a> | Credits </p>
+       </footer>
+
+</body>
 </html>

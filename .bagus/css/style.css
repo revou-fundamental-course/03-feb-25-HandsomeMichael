@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0 20%;
+}
+
+h1 {
+  font-size: 10rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+input {
+  height: 2.5rem;
+  font-size: 1.2rem;
+  border: 1px solid;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+button {
+  position: relative;
+  width: 25rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  background-color: rgb(129, 251, 255);
+  border: 2px solid rgb(141, 228, 231);
+  overflow: hidden;
+  -webkit-transition: 0.15s ease;
+  -moz-transition: 0.15s ease;
+  -ms-transition: 0.15s ease;
+  -o-transition: 0.15s ease;
+  transition: 0.15s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  /*Startoutside*/
+  width: 100%;
+  /*Fullbuttonwidth*/
+  height: 100%;
+  background-color: #008cba;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  z-index: 10;
+}
+
+.text {
+  position: relative;
+  z-index: 20;
+  -webkit-transition: 0.5s ease;
+  -moz-transition: 0.5s ease;
+  -ms-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+button:active {
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+button:hover .overlay {
+  left: 0;
+}
+button:hover .text {
+  color: white;
+  direction: rtl;
+  display: inline-block;
+  transform: scaleX(-1);
+  text-align: right;
+}
+
+input:read-only {
+  background-color: rgb(238, 238, 238);
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -30;
+}
