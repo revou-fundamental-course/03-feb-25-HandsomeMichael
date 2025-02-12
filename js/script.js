@@ -16,9 +16,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const resetBtn = document.getElementById("reset-btn");
     const reverseBtn = document.getElementById("reverse-btn");
 
+    const displayCC = document.getElementsByClassName("display-cc");
+    const displayFF = document.getElementsByClassName("display-ff");
+
+    const errorCC = document.getElementById("error-cc");
+    const errorFF = document.getElementById("error-ff");
+
+
     let isCelciusToFahrenheit = true;
 
-    function convert() {
+    function convert() 
+    {
         if (isCelciusToFahrenheit) {
             let c = parseFloat(celciusInput.value);
             if (!isNaN(c)) {
@@ -40,21 +48,66 @@ document.addEventListener("DOMContentLoaded", () => {
         celciusInput.value = "";
         fahrenheitInput.value = "";
         conversionStep.value = "";
+        reset_error();
     }
 
     function reverse() {
         isCelciusToFahrenheit = !isCelciusToFahrenheit;
         conversionStep.value = '';
 
+        document.querySelectorAll(".display-cc").forEach(el => {
+            el.style.display = isCelciusToFahrenheit ? "none" : "block";
+        });
+
+        document.querySelectorAll(".display-ff").forEach(el => {
+            el.style.display = isCelciusToFahrenheit ? "block" : "none";
+        });
+
         // Swap readonly state
         celciusInput.toggleAttribute("readonly");
         fahrenheitInput.toggleAttribute("readonly");
 
         convert();
+        reset_error();
 
     }
 
-    convertBtn.addEventListener("click", convert);
+    function on_convert()
+    {
+        if (isCelciusToFahrenheit)
+        {
+            if (celciusInput.value == '')
+            {
+                errorCC.style.display = "block";
+                return;
+            }
+        }
+        else 
+        {
+            if (fahrenheitInput.value == '')
+            {
+                errorFF.style.display = "block";
+                return;
+            }
+        }
+
+        errorCC.style.display = "none";
+        errorFF.style.display = "none";
+
+        convert();
+    }
+
+    function reset_error()
+    {
+        errorCC.style.display = "none";
+        errorFF.style.display = "none";
+    }
+
+    convertBtn.addEventListener("click", on_convert);
     resetBtn.addEventListener("click", reset);
     reverseBtn.addEventListener("click", reverse);
+
+    document.querySelectorAll(".display-ff").forEach(el => el.style.display = "none");
+
+    reset_error();
 });

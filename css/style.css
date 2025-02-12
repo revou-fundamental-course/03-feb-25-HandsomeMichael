@@ -215,15 +215,15 @@ body
 }
   
 .main {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    background-color: var(--cblue);
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--cblue);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
 
-    gap: 40px;
+  gap: 40px;
 }
 
 input:read-only {
@@ -252,7 +252,7 @@ input[type=submit] {
 
 label
 {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #konversi-cara
@@ -301,9 +301,11 @@ input[type=submit]:hover {
   transition-duration: 0.4s;
 }
 
+
 .content-rumus h1
 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .content-contoh

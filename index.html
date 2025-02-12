@@ -44,9 +44,14 @@
         <!-- Introduksi -->
         <section class="content-penjelasan">
             <h1>Penjelasan</h1>
-            <p>Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah,<br>
+            <p class="display-cc">Masukkan suhu derajat Celcius (&deg;C) ke kotak dibawah,<br>
                 lali klik tombol konversi untuk mendapatkan <br>
                 hasil konversi dalam bentuk Fahrenheit (&deg;F)</p>
+
+            <p class="display-ff">Masukkan suhu derajat Fahrenheit (&deg;F) ke kotak dibawah,<br>
+                lali klik tombol konversi untuk mendapatkan <br>
+                hasil konversi dalam bentuk Celcius (&deg;C)</p>
+
         </section>
 
         <!-- Actual stuff -->
@@ -55,12 +60,19 @@
             <!-- Input  -->
             <div>
                 <label for="main-celcius">Suhu Celcius (C&deg;) :</label>
-                <input type="number" id="main-celcius">    
+                <div class="input-container">
+                    <p id="error-cc">❌Masukkan suhu celcius yg valid !</p>
+                    <input type="number" id="main-celcius">
+                </div>
             </div>
 
             <div>
                 <label for="main-fahrenheit">Suhu Fahrenheit (F&deg;): </label>
-                <input type="number" id="main-fahrenheit" readonly>
+
+                <div class="input-container">
+                    <p id="error-ff">❌ Masukkan suhu fahrenheit yg valid !</p>
+                    <input type="number" id="main-fahrenheit" readonly>
+                </div>
             </div>
 
             <!-- Main Action Button -->
@@ -82,18 +94,37 @@
         <!-- Rumus -->
          <section class="content-rumus">
 
-            <h1>
-                Rumus
-            </h1>
+            <h1 class="display-cc">Rumus  (°C) -> (°F)</h1>
+            <h1 class="display-ff">Rumus  (°F) -> (°C)</h1>
 
-            <p>
+            <p class="display-cc">
                 Suhu S dalam derajat Celcius (°C) sama dengan suhu S <br> 
                 dalam derajat Fahrenheit (°F) dikurangi 32, kemudian dibagi 5/9.
             </p>
 
-            <div class="content-contoh">
+            <p class="display-ff">
+                Suhu S dalam derajat Fahrenheit (°F) sama dengan suhu S <br>
+                dalam derajat Celcius (°C) dikalikan 9/5, kemudian ditambah 32.
+            </p>
+
+            <div class="content-contoh display-ff">
                 <p>
-                    <b>S</b>(<b>&deg;F</b>) = (<b>S</b>(<b>&deg;C</b>) × <sup>9</sup>&frasl;<sub>5</sub>) + 32
+                    <b>S</b><sub>(<b>&deg;C</b>)</sub> = (<b>S</b><sub>(<b>&deg;F</b>)</sub> − 32) × <sup>5</sup>&frasl;<sub>9</sub>
+                </p>
+            
+                <p>
+                    atau
+                </p>
+            
+                <p>
+                    <b>S</b><sub>(<b>&deg;C</b>)</sub> = (<b>S</b><sub>(<b>&deg;F</b>)</sub> − 32) × 0.5556
+                </p>
+            </div>
+            
+
+            <div class="content-contoh  display-cc">
+                <p>
+                    <b>S</b><sub>(<b>&deg;F</b>)</sub> = (<b>S</b><sub>(<b>&deg;C</b>)</sub> × <sup>9</sup>&frasl;<sub>5</sub>) + 32
                 </p>
                 
                 <p>
@@ -101,7 +132,7 @@
                 </p>
                 
                 <p>
-                    <b>S</b>(<b>&deg;F</b>) = (<b>S</b>(<b>&deg;C</b>) × 1.8) + 32
+                    <b>S</b><sub>(<b>&deg;F</b>)</sub> = (<b>S</b><sub>(<b>&deg;C</b>)</sub> × 1.8) + 32
                 </p>
             </div>
 
