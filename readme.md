@@ -34,7 +34,7 @@ Aplikasi ini menampilkan hasil konversi **secara real-time**, memungkinkan pengg
 ✅ **Mode Reverse** untuk membalikkan konversi dengan cepat  
 ✅ **Tombol Reset** untuk menghapus semua input  
 ✅ **Menampilkan rumus perhitungan** dalam format yang mudah dibaca  
-✅ **Desain responsif**, ringan, dan mudah digunakan  
+✅ **Copy & Paste** untuk mempermudah mengambil nilai konversi  
 
 ---
 
@@ -59,7 +59,7 @@ Desain awal dan Hasilnya
 ## 📂 Struktur Folder  
 ```
 /konverter-suhu
-│── assets/           # Ikon, gambar, dan font
+│── assets/           # Logo & Icon
 │── index.html        # File HTML utama
 │── css/styles.css        # File CSS untuk tampilan
 │── js/script.js         # Logika utama JavaScript
@@ -73,18 +73,15 @@ Desain awal dan Hasilnya
 ```
 git clone https://github.com/revou-fundamental-course/03-feb-25-HandsomeMichael.git
 ```
-2️⃣ **Buka `index.html` di browser**  
+2️⃣ **Buka `index.html` di browser atau gunakan plugin live share di visual studio code**  
 3️⃣ **Siap digunakan! 🎉**  
 
 ---
 
-## 🤝 Kontribusi  
-Jika Anda memiliki ide untuk meningkatkan aplikasi ini, jangan ragu untuk **fork & kirim pull request!** 💡  
+## 🤝 Ayo Belajar  
+Semua orang dibebaskan untuk menggunakan codingan dari hasil course Revou ini
 
----
-
-## 📜 Lisensi  
-📝 Proyek ini berlisensi **MIT License**, sehingga Anda bebas menggunakannya dan mengembangkan lebih lanjut.  
+Ini merupakan salah satu website pertama saya yg di post di github pages  
 
 ---
 
