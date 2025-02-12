@@ -2,7 +2,7 @@
 
 *Aplikasi web sederhana untuk mengonversi suhu antara Celsius dan Fahrenheit dengan cepat dan mudah.*  
 
-🔗 **[Coba di sini](https://revou-fundamental-course.github.io/03-feb-25-HandsomeMichael/)**
+🔗 **[Buka Web Hasil](https://revou-fundamental-course.github.io/03-feb-25-HandsomeMichael/)**
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/revou-fundamental-course/03-feb-25-HandsomeMichael?style=for-the-badge)  ![GitHub stars](https://img.shields.io/github/stars/revou-fundamental-course/03-feb-25-HandsomeMichael?style=for-the-badge)  ![GitHub forks](https://img.shields.io/github/forks/revou-fundamental-course/03-feb-25-HandsomeMichael?style=for-the-badge)  
 ![License](https://img.shields.io/github/license/revou-fundamental-course/03-feb-25-HandsomeMichael?style=for-the-badge)  
@@ -49,8 +49,10 @@ Aplikasi ini menampilkan hasil konversi **secara real-time**, memungkinkan pengg
 ---
 
 ## 📷 Tampilan Aplikasi  
+Desain awal dan Hasilnya
 
-<img width="245" alt="image" src="https://github.com/user-attachments/assets/01d4b304-b8e7-4c73-8ba9-9be14b95299c" />
+<img width="245" alt="image" src="https://github.com/user-attachments/assets/01d4b304-b8e7-4c73-8ba9-9be14b95299c" /><img width="185" alt="image" src="https://github.com/user-attachments/assets/079c566c-87cd-4053-9970-2234b56c3f0e" />
+
 
 ---
 
