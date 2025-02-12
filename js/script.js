@@ -44,28 +44,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function reverse() {
         isCelciusToFahrenheit = !isCelciusToFahrenheit;
-
-        let celc = celciusInput.value;
-        let fah =  fahrenheitInput.value;
-
-        // Transfer the value without modification
-        if (isCelciusToFahrenheit) {
-            celciusInput.value = fah;
-            fahrenheitInput.value = celc;
-
-        } else {
-            fahrenheitInput.value = celc;
-            celciusInput.value = fah;
-
-        }
-
         conversionStep.value = '';
 
         // Swap readonly state
         celciusInput.toggleAttribute("readonly");
         fahrenheitInput.toggleAttribute("readonly");
 
-        // reset(); // Reset the calculation
+        convert();
+
     }
 
     convertBtn.addEventListener("click", convert);
